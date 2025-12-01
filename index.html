@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishan Saraf — Trader, Author, and Quant</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for a modern look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Inter font setup (Tailwind default) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* --- UNIQUE AESTHETIC ENHANCEMENTS --- */
+
+        /* Body background for uniqueness - subtle radial dark gradient for depth */
+        .textured-bg {
+            background-color: #000;
+            /* A subtle mix of deep blue and emerald green glow to break up pure black */
+            background-image: radial-gradient(at 0% 0%, #1e3a8a33, transparent 50%),
+                              radial-gradient(at 100% 100%, #10b98133, transparent 50%);
+        }
+
+        /* Custom styles for premium look and hover effects */
+        .premium-card {
+            transition: all 0.3s ease-in-out;
+            transform: translateZ(0); /* Hardware acceleration */
+            will-change: transform, box-shadow;
+        }
+        /* Enhanced hover glow and lift */
+        .premium-card:hover {
+            transform: translateY(-4px); /* Slight lift */
+            /* Brighter emerald glow */
+            box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.4), 0 4px 6px -2px rgba(16, 185, 129, 0.1); 
+        }
+        
+        /* Button press effect (Active state) */
+        .button-press:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Updated gradient color to be Emerald green */
+        .text-gradient {
+            background-image: linear-gradient(45deg, #6ee7b7, #059669); /* Light to dark Emerald */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<!-- DARK MODE BODY SETUP (Black and Sleek) - ADDED textured-bg CLASS -->
+<body class="textured-bg text-gray-100 antialiased">
+
+    <!-- Floating Navigation Bar (Sleek Glassmorphism Effect) -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-sm bg-black/70 shadow-2xl border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#hero" class="text-xl font-extrabold text-white tracking-tight">
+                    Ishan Saraf<span class="text-emerald-500">.</span>
+                </a>
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition duration-150">About</a>
+                    <a href="#books" class="text-sm font-medium text-gray-300 hover:text-white transition duration-150">Books</a>
+                    <a href="#trading" class="text-sm font-medium text-gray-300 hover:text-white transition duration-150">Research</a>
+                </div>
+                <!-- Contact Button (Added button-press class) -->
+                <a href="#contact" class="button-press hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-black bg-emerald-400 hover:bg-emerald-500 transition duration-150">
+                    Collaborate
+                </a>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-xl text-gray-300 hover:bg-gray-800 transition duration-150" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-800">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">About</a>
+                <a href="#books" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Books</a>
+                <a href="#trading" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Research</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-black bg-emerald-400 text-center mt-2 button-press">Collaborate</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="py-20 md:py-32 lg:py-40 border-b border-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-6 text-white">
+                    Ishan Saraf —
+                    <span class="text-gradient">Trader, Author,</span> and Quantitative Researcher.
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="mt-4 max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 mb-10">
+                    Author of <b>The Liquidity Blueprint</b> and <b>Fundamentals Unfiltered</b>, trader in Indian and global markets, and builder of high-performance algorithmic trading systems.
+                </p>
+
+                <!-- Portrait Placeholder and Quote -->
+                <div class="flex flex-col items-center justify-center">
+                    
+                    <!-- Portrait Image -->
+                    <img src="https://mjpfpiiachtdamuhosaq.supabase.co/storage/v1/object/public/Book/Gemini_Generated_Image_l2oaerl2oaerl2oa.png"
+                         alt="Ishan Saraf Portrait"
+                         class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover mb-12 shadow-2xl border-4 border-emerald-400/50 transition duration-300 hover:border-emerald-400"
+                         onerror="this.onerror=null; this.src='https://placehold.co/160x160/1f2937/d1d5db?text=Ishan+Saraf';"
+                    >
+
+                    <!-- Quote: Veni, Vidi, Vici -->
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-4xl lg:text-5xl font-extrabold text-emerald-400 italic tracking-wider">
+                            Veni, Vidi, Vici.
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">
+                            (I came, I saw, I conquered.)
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-20 md:py-28 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
+                    A Brief Look at the Journey
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Description Card -->
+                    <div class="premium-card p-8 md:p-10 bg-black border border-gray-800 rounded-3xl shadow-xl">
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                            Ishan Saraf is an <b>18-year-old BSc Economics student</b> with a unique blend of academic rigour and hands-on market experience. His journey began with trading in the complex <b>Indian equity and commodity markets</b>, quickly expanding to global instruments like <b>XAUUSD (Gold)</b> and major Forex pairs.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                            He is the author of two published finance books, demonstrating a commitment to synthesizing complex ideas into accessible knowledge. As an <b>algorithmic developer</b>, Ishan successfully built a <b>profitable Bitcoin algo</b>, focusing his quantitative research on core concepts like <b>liquidity, macroeconomics, and market structure</b>.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed font-semibold">
+                            Curious, disciplined, and unfazed by complex challenges, Ishan aims to bridge the gap between economic theory and high-performance quantitative practice.
+                        </p>
+                    </div>
+
+                    <!-- Timeline/Key Facts Card -->
+                    <div class="space-y-6">
+                        <div class="premium-card flex items-start space-x-4 p-5 bg-black border border-gray-800 rounded-xl shadow-lg">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-white">Academic Foundation</h3>
+                                <p class="text-gray-400">18-year-old BSc Economics student.</p>
+                            </div>
+                        </div>
+                        <div class="premium-card flex items-start space-x-4 p-5 bg-black border border-gray-800 rounded-xl shadow-lg">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-white">Trading Expertise</h3>
+                                <p class="text-gray-400">Active trader in Indian Equities/Commodities, XAUUSD/Forex, focused on ICT Market Structure.</p>
+                            </div>
+                        </div>
+                        <div class="premium-card flex items-start space-x-4 p-5 bg-black border border-gray-800 rounded-xl shadow-lg">
+                            <i data-lucide="book-open" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-white">Published Author</h3>
+                                <p class="text-gray-400">Writer of 'The Liquidity Blueprint' & 'Fundamentals Unfiltered'.</p>
+                            </div>
+                        </div>
+                        <div class="premium-card flex items-start space-x-4 p-5 bg-black border border-gray-800 rounded-xl shadow-lg">
+                            <i data-lucide="code" class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-white">Algo Development</h3>
+                                <p class="text-gray-400">Developed a profitable quantitative system for Bitcoin trading.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Books Section (Interactive Cards) -->
+        <section id="books" class="py-20 md:py-28 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
+                    Published Works
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    
+                    <!-- Book Card 1: The Liquidity Blueprint -->
+                    <div class="premium-card flex flex-col sm:flex-row p-6 bg-gray-900 border border-gray-800 rounded-3xl shadow-xl hover:shadow-2xl transition duration-300">
+                        <!-- Book Cover Image (Updated URL) -->
+                        <img src="https://mjpfpiiachtdamuhosaq.supabase.co/storage/v1/object/public/Book/Liquidity%20Blueprint%20poster.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/160x192/1f2937/d1d5db?text=Liquidity+Blueprint';" 
+                             alt="Cover for The Liquidity Blueprint" 
+                             class="w-full sm:w-40 h-48 object-cover rounded-xl flex-shrink-0 mb-4 sm:mb-0 sm:mr-6 shadow-md"
+                        >
+                        <!-- Content -->
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">The Liquidity Blueprint</h3>
+                            <p class="text-gray-300 mb-4">
+                                A comprehensive guide detailing advanced concepts of market liquidity, order flow analysis, and structural mechanics critical for institutional trading strategies.
+                            </p>
+                            <!-- Added button-press class -->
+                            <a href="https://amzn.in/d/8k8Fhkp" target="_blank" class="button-press inline-flex items-center text-sm font-semibold text-black bg-emerald-400 hover:bg-emerald-500 px-4 py-2 rounded-xl transition duration-150">
+                                View on Amazon
+                                <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 2: Fundamentals Unfiltered -->
+                    <div class="premium-card flex flex-col sm:flex-row p-6 bg-gray-900 border border-gray-800 rounded-3xl shadow-xl hover:shadow-2xl transition duration-300">
+                        <!-- Book Cover Image (Updated URL) -->
+                        <img src="https://mjpfpiiachtdamuhosaq.supabase.co/storage/v1/object/public/Book/buk.png" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/160x192/1f2937/d1d5db?text=Fundamentals+Unfiltered';" 
+                             alt="Cover for Fundamentals Unfiltered" 
+                             class="w-full sm:w-40 h-48 object-cover rounded-xl flex-shrink-0 mb-4 sm:mb-0 sm:mr-6 shadow-md"
+                        >
+                        <!-- Content -->
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2">Fundamentals Unfiltered</h3>
+                            <p class="text-gray-300 mb-4">
+                                Stripping away the noise, this book provides a concise, macro-focused approach to fundamental analysis, designed for the modern, fast-moving trader and investor.
+                            </p>
+                            <!-- Added button-press class -->
+                            <a href="https://amzn.in/d/68Ws6Hy" target="_blank" class="button-press inline-flex items-center text-sm font-semibold text-black bg-emerald-400 hover:bg-emerald-500 px-4 py-2 rounded-xl transition duration-150">
+                                View on Amazon
+                                <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Trading & Research Section -->
+        <section id="trading" class="py-20 md:py-28 bg-gray-900/50 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Quantitative Trading & Research
+                    </h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                        A focused look at the models, concepts, and systems developed for efficient market operation.
+                    </p>
+                </div>
+
+                <!-- Stylized Feature Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Feature 1: ICT-Based Trading -->
+                    <div class="premium-card p-6 bg-black border border-gray-800 rounded-3xl shadow-xl">
+                        <i data-lucide="scan-eye" class="w-8 h-8 text-emerald-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white mb-3">ICT Market Structure</h3>
+                        <p class="text-gray-300 text-sm">
+                            Experienced in applying advanced Inner Circle Trader (ICT) concepts, focusing on optimal trade entry, liquidity sweeps, and fair value gaps for high-probability setups in XAUUSD and Forex.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2: Algorithmic Systems -->
+                    <div class="premium-card p-6 bg-black border border-gray-800 rounded-3xl shadow-xl">
+                        <i data-lucide="cpu" class="w-8 h-8 text-emerald-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white mb-3">Algorithmic Trading Systems</h3>
+                        <p class="text-gray-300 text-sm">
+                            Built and backtested high-frequency algorithmic systems. Key success: a fully automated, profitable Bitcoin trading algorithm utilizing structured price action and momentum signals.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Macro & Quant Models -->
+                    <div class="premium-card p-6 bg-black border border-gray-800 rounded-3xl shadow-xl">
+                        <i data-lucide="database" class="w-8 h-8 text-emerald-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-white mb-3">Liquidity & Quantitative Models</h3>
+                        <p class="text-gray-300 text-sm">
+                            Deep research into macro drivers, central bank policy, and developing proprietary quantitative models to measure market liquidity and predict shifts in structural flow.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. Substack Section -->
+        <section id="substack" class="py-20 md:py-28 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex md:items-center md:justify-between p-8 bg-gray-900/70 rounded-3xl shadow-xl border border-gray-800">
+                    <div class="md:w-3/5">
+                        <h2 class="text-3xl font-bold text-white mb-3">
+                            Deep Dive: My Substack
+                        </h2>
+                        <p class="text-lg text-gray-400">
+                            The space where I share in-depth analysis on macroeconomics, liquidity mechanics, quantitative research findings, and market commentary. Stay ahead of the curve.
+                        </p>
+                    </div>
+                    <div class="mt-8 md:mt-0 md:w-2/5 md:text-right">
+                        <!-- Added button-press class -->
+                        <a href="https://thetradingmind.substack.com" target="_blank" class="button-press inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-2xl shadow-lg text-black bg-emerald-400 hover:bg-emerald-500 transition duration-200">
+                            Read My Writing
+                            <i data-lucide="book-open-text" class="w-5 h-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contact Section (Updated to Mailto Link) -->
+        <section id="contact" class="py-20 md:py-28 bg-gray-900/50 border-t border-gray-800">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-white mb-3">
+                        Let's Collaborate
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Interested in quantitative research, a collaboration, or just a market chat? Send a message.
+                    </p>
+                </div>
+
+                <!-- Direct Mailto Link as a Prominent Button -->
+                <div class="premium-card p-8 bg-black rounded-3xl shadow-xl border border-gray-800 text-center">
+                    <p class="text-xl font-semibold text-gray-300 mb-6">
+                        Click below to start an email conversation.
+                    </p>
+                    <!-- Added button-press class -->
+                    <a href="mailto:ishansaraf201@gmail.com" 
+                       class="button-press inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 border border-transparent text-lg font-bold rounded-2xl shadow-lg text-black bg-emerald-400 hover:bg-emerald-500 transition duration-200">
+                        <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+                        Email Ishan Saraf
+                    </a>
+                    <p class="text-sm text-gray-500 mt-4">
+                        (Opens your default email application)
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 text-white py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
+            <!-- Copyright -->
+            <p class="text-sm text-gray-500 mb-4 sm:mb-0">
+                &copy; 2025 Ishan Saraf. All rights reserved.
+            </p>
+            <!-- Social Icons (GitHub, LinkedIn, Instagram, Substack, Email) -->
+            <div class="flex space-x-6">
+                <!-- GitHub -->
+                <a href="https://github.com/Ishan16201" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-150 button-press" aria-label="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ishan-saraf-b6a2b933b/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-150 button-press" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/ishan402s" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-150 button-press" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <!-- Substack -->
+                <a href="https://thetradingmind.substack.com" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-150 button-press" aria-label="Substack">
+                    <i data-lucide="feather" class="w-6 h-6"></i>
+                </a>
+                <!-- Email -->
+                <a href="mailto:ishansaraf201@gmail.com" class="text-gray-400 hover:text-emerald-400 transition duration-150 button-press" aria-label="Email">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // 2. Navigation Bar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Subtle change: ensure shadow is present when scrolled down
+                navbar.classList.add('shadow-2xl');
+            } else {
+                // Remove shadow when at the very top
+                navbar.classList.remove('shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
