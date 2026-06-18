@@ -39,7 +39,7 @@ export const socialLinks = [
 
 export const aboutParagraphs = [
   "I'm Ishan Saraf — 19 years old, based in India. I trade XAUUSD and USDJPY using ICT and Smart Money concepts, build quantitative trading systems, publish books on finance and markets, conduct academic research, and make music when the charts are closed.",
-  "I operate at the intersection of financial markets, systems architecture, and original research. I don't dabble — I build, ship, and publish. Four books on Amazon, three papers on SSRN, trading infrastructure that runs live, and a Substack where I write about the mental game of markets.",
+  "I operate at the intersection of financial markets, systems architecture, and original research. I don't dabble — I build, ship, and publish. Four books on Amazon, four papers on SSRN, trading infrastructure that runs live, and a Substack where I write about the mental game of markets.",
   "I'm interested in anything that compounds: skill, knowledge, capital, and conviction.",
 ] as const;
 
@@ -95,6 +95,13 @@ export const researchPapers = [
     description:
       "A cross-asset study on macroeconomic indicators and their predictive power for short-term price action in major currency pairs.",
     href: "https://ssrn.com/abstract=6764698",
+  },
+  {
+    id: "paper-4",
+    title: "Research Paper IV",
+    description:
+      "A new SSRN publication extending the research track with market-focused analysis, empirical framing, and practical implications for traders and builders.",
+    href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6873342",
   },
 ] as const;
 

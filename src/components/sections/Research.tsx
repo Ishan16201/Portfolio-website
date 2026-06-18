@@ -10,7 +10,7 @@ export function Research() {
         <ScrollReveal>
           <SectionHeader label="Academic" title="Research" />
         </ScrollReveal>
-        <StaggerReveal className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerReveal className="grid gap-7 sm:grid-cols-2">
           {researchPapers.map((paper) => (
             <StaggerItem key={paper.id}>
               <ContentCard

@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useState } from "react";
+import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import { ExternalLinkIcon } from "@/components/icons/SocialIcons";
 import { springSnappy } from "@/lib/motion";
 
@@ -26,11 +27,39 @@ export function ContentCard({
 }: ContentCardProps) {
   const reducedMotion = useReducedMotion();
   const isLink = Boolean(href);
+  const [spotlight, setSpotlight] = useState({ x: 50, y: 50 });
+
+  const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
+    if (reducedMotion) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    setSpotlight({
+      x: ((event.clientX - rect.left) / rect.width) * 100,
+      y: ((event.clientY - rect.top) / rect.height) * 100,
+    });
+  };
+
+  const spotlightStyle = {
+    background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(201, 168, 76, 0.18), transparent 34%)`,
+  } satisfies CSSProperties;
 
   const cardContent = (
-  <>
+    <>
+      <span
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={spotlightStyle}
+        aria-hidden
+      />
+      <span
+        className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden
+      />
+      <span
+        className="pointer-events-none absolute right-5 top-5 h-2 w-2 rounded-full bg-accent/70 opacity-0 shadow-[0_0_18px_rgba(201,168,76,0.65)] transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden
+      />
       {badge && (
-        <span className="mb-4 inline-block rounded-full bg-accent-dim px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-accent">
+        <span className="relative mb-4 inline-block rounded-full bg-accent-dim px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-accent">
           {badge}
         </span>
       )}
@@ -45,7 +74,7 @@ export function ContentCard({
       </div>
       <p className="mb-5 text-sm leading-relaxed text-text-secondary">{description}</p>
       {isLink && (
-        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+        <span className="relative inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
           {linkLabel}
           <ExternalLinkIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
@@ -56,12 +85,13 @@ export function ContentCard({
   const motionProps = reducedMotion
     ? {}
     : {
-        whileHover: { y: -6, scale: 1.02 },
+        whileHover: { y: -8, scale: 1.02, rotateX: 2, rotateY: -2 },
+        whileTap: { scale: 0.98 },
         transition: springSnappy,
       };
 
   const className =
-    "group relative block overflow-hidden rounded-2xl glass p-8 transition-shadow duration-300 hover:glow-accent hover:shadow-2xl hover:shadow-accent/5";
+    "group relative block h-full overflow-hidden rounded-2xl glass p-8 transition-shadow duration-300 hover:glow-accent hover:shadow-2xl hover:shadow-accent/5";
 
   const pulseRing = !reducedMotion && (
     <motion.span
@@ -74,8 +104,15 @@ export function ContentCard({
 
   if (isLink && href) {
     return (
-      <motion.div {...motionProps} className="h-full">
-        <Link href={href} id={id} target="_blank" rel="noopener noreferrer" className={className}>
+      <motion.div {...motionProps} className="h-full transform-gpu [transform-style:preserve-3d]">
+        <Link
+          href={href}
+          id={id}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+          onMouseMove={handleMouseMove}
+        >
           {pulseRing}
           {cardContent}
         </Link>
@@ -84,7 +121,12 @@ export function ContentCard({
   }
 
   return (
-    <motion.article id={id} {...motionProps} className={`${className} h-full`}>
+    <motion.article
+      id={id}
+      {...motionProps}
+      className={className}
+      onMouseMove={handleMouseMove}
+    >
       {pulseRing}
       {cardContent}
     </motion.article>
