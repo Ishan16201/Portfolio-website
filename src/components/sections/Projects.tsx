@@ -19,6 +19,9 @@ export function Projects() {
                 id={project.id}
                 title={project.title}
                 description={project.description}
+                href={project.href}
+                linkLabel="View repo →"
+                badge="GitHub"
               />
             </StaggerItem>
           ))}

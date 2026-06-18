@@ -77,51 +77,54 @@ export const books = [
 export const researchPapers = [
   {
     id: "paper-1",
-    title: "Research Paper I",
+    title: "RADIANT",
     description:
-      "Exploring quantitative models and market microstructure dynamics through empirical analysis and original data-driven frameworks.",
+      "A regime-adaptive trading architecture for XAUUSD that combines LSTM regime inference, Bayesian filtering, hysteresis gating, and Kelly-style allocation.",
     href: "https://ssrn.com/abstract=6427863",
   },
   {
     id: "paper-2",
-    title: "Research Paper II",
+    title: "CIRT",
     description:
-      "Investigating structural shifts in liquidity provision and their implications for systematic trading strategy design.",
+      "A theoretical framework for conscious recurrence, formalizing causal integration, predictive precision, entropy, and substrate-independent identity thresholds.",
     href: "https://ssrn.com/abstract=6524720",
   },
   {
     id: "paper-3",
-    title: "Research Paper III",
+    title: "Path Integral Option Pricing",
     description:
-      "A cross-asset study on macroeconomic indicators and their predictive power for short-term price action in major currency pairs.",
+      "A physics-inspired extension of option pricing beyond Black-Scholes, using path integrals for jump-diffusion and rough volatility dynamics.",
     href: "https://ssrn.com/abstract=6764698",
   },
   {
     id: "paper-4",
-    title: "Research Paper IV",
+    title: "CARA",
     description:
-      "A new SSRN publication extending the research track with market-focused analysis, empirical framing, and practical implications for traders and builders.",
+      "A unified AGI architecture based on Hierarchical Predictive Agency, global workspace coordination, continual learning, and recursive self-modeling.",
     href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6873342",
   },
 ] as const;
 
 export const projects = [
   {
-    id: "project-infra",
-    title: "Trading Infrastructure Engine",
+    id: "project-radiant",
+    title: "RADIANT",
     description:
-      "Low-latency execution pipeline for live markets. Order management, position sizing, and real-time risk monitoring — built for speed and reliability.",
+      "A multi-stage XAUUSD regime engine with density-matrix features, dual-layer LSTM classification, recursive Bayesian hysteresis, MT5 execution, and startup self-calibration.",
+    href: "https://github.com/Ishan16201/RADIANT",
   },
   {
-    id: "project-mt5",
-    title: "MT5 Bridge Automation",
+    id: "project-hft",
+    title: "HFT Market Maker",
     description:
-      "Automated bridge connecting custom strategy signals to MetaTrader 5 for seamless live execution across forex and commodities.",
+      "A low-latency MT5 market-making system with Bayesian fair-value estimation, order-flow imbalance signals, adverse-selection detection, Avellaneda-Stoikov quoting, and pre-trade risk gates.",
+    href: "https://github.com/Ishan16201/HFT",
   },
   {
-    id: "project-quant",
-    title: "Quant Signal Systems",
+    id: "project-cara",
+    title: "CARA",
     description:
-      "Multi-factor quantitative signal generation platform. Backtesting engine, walk-forward optimization, and production-grade alert dispatch.",
+      "An AGI architecture concept translating the CARA paper into a prototype direction: hierarchical predictive agency, global workspace routing, world modeling, self-modeling, and meta-cognitive control.",
+    href: "https://github.com/Ishan16201/CARA",
   },
 ] as const;
