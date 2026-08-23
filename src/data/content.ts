@@ -39,7 +39,7 @@ export const socialLinks = [
 
 export const aboutParagraphs = [
   "I'm Ishan Saraf — 19 years old, based in India. I trade XAUUSD and USDJPY using ICT and Smart Money concepts, build quantitative trading systems, publish books on finance and markets, conduct academic research, and make music when the charts are closed.",
-  "I operate at the intersection of financial markets, systems architecture, and original research. I don't dabble — I build, ship, and publish. Four books on Amazon, four papers on SSRN, trading infrastructure that runs live, and a Substack where I write about the mental game of markets.",
+  "I operate at the intersection of financial markets, systems architecture, and original research. I don't dabble — I build, ship, and publish. Five books on Amazon, five papers on SSRN, trading infrastructure that runs live, and a Substack where I write about the mental game of markets.",
   "I'm interested in anything that compounds: skill, knowledge, capital, and conviction.",
 ] as const;
 
@@ -72,6 +72,13 @@ export const books = [
       "Options, futures, and structured products demystified. Pricing models, risk Greeks, and real-world hedging strategies built for the practitioner, not the textbook.",
     href: "https://amzn.in/d/0bFmNXbV",
   },
+  {
+    id: "book-quant-edge",
+    title: "The Quantitative Edge",
+    description:
+      "A full-spectrum treatment of modern quantitative finance: stochastic calculus, derivative pricing, algorithmic strategy construction, market microstructure, volatility trading, and machine learning — with Hidden Markov Models woven throughout as a practical regime framework.",
+    href: "https://amzn.in/d/05yZsez2",
+  },
 ] as const;
 
 export const researchPapers = [
@@ -102,6 +109,13 @@ export const researchPapers = [
     description:
       "A unified AGI architecture based on Hierarchical Predictive Agency, global workspace coordination, continual learning, and recursive self-modeling.",
     href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6873342",
+  },
+  {
+    id: "paper-5",
+    title: "NH-SOR",
+    description:
+      "A neuromorphic, photonic–FPGA architecture for ultra-low-latency smart order routing in financial markets.",
+    href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7306798",
   },
 ] as const;
 

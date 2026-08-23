@@ -91,7 +91,7 @@ export function ContentCard({
       };
 
   const className =
-    "group relative block h-full overflow-hidden rounded-2xl glass p-8 transition-shadow duration-300 hover:glow-accent hover:shadow-2xl hover:shadow-accent/5";
+    "group relative block h-full overflow-hidden rounded-2xl liquid-glass p-8 transition-shadow duration-300 hover:shadow-2xl hover:shadow-accent/10";
 
   const pulseRing = !reducedMotion && (
     <motion.span
