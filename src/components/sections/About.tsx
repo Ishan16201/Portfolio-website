@@ -9,7 +9,7 @@ export function About() {
           <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             About
           </span>
-          <div className="glass rounded-2xl p-8 md:p-10">
+          <div className="liquid-glass rounded-2xl p-8 md:p-10">
             {aboutParagraphs.map((paragraph, i) => (
               <p
                 key={i}
