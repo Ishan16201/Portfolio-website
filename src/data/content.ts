@@ -81,9 +81,9 @@ export const books = [
   },
   {
     id: "book-latest-release",
-    title: "Latest Amazon Release",
+    title: "The Illusion Of Edge",
     description:
-      "A newly published work exploring market structure, execution discipline, and the systems behind high-conviction trading decisions.",
+      "The Illusion of Edge exposes the gamified interfaces, synthetic liquidity, and tribal communities designed to extract your capital. More importantly, it rewires the ancient biological wiring that forces you to buy tops, sell bottoms, and revenge trade.",
     href: "https://amzn.in/d/02LtTeFc",
   },
 ] as const;
@@ -126,9 +126,9 @@ export const researchPapers = [
   },
   {
     id: "paper-latest",
-    title: "Latest SSRN Paper",
+    title: "Invariant Causal Representation Learning for Alpha Generation",
     description:
-      "A new academic contribution focused on market behavior, predictive systems, and the mathematical structure of complex financial dynamics.",
+      "A Framework for Out-of-Distribution Generalization in Non-Stationary Financial Markets",
     href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7602365",
   },
 ] as const;
