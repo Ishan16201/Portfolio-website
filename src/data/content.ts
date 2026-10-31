@@ -79,6 +79,13 @@ export const books = [
       "A full-spectrum treatment of modern quantitative finance: stochastic calculus, derivative pricing, algorithmic strategy construction, market microstructure, volatility trading, and machine learning — with Hidden Markov Models woven throughout as a practical regime framework.",
     href: "https://amzn.in/d/05yZsez2",
   },
+  {
+    id: "book-latest-release",
+    title: "Latest Amazon Release",
+    description:
+      "A newly published work exploring market structure, execution discipline, and the systems behind high-conviction trading decisions.",
+    href: "https://amzn.in/d/02LtTeFc",
+  },
 ] as const;
 
 export const researchPapers = [
@@ -116,6 +123,13 @@ export const researchPapers = [
     description:
       "A neuromorphic, photonic–FPGA architecture for ultra-low-latency smart order routing in financial markets.",
     href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7306798",
+  },
+  {
+    id: "paper-latest",
+    title: "Latest SSRN Paper",
+    description:
+      "A new academic contribution focused on market behavior, predictive systems, and the mathematical structure of complex financial dynamics.",
+    href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7602365",
   },
 ] as const;
 
